@@ -8,11 +8,14 @@ const resolve = require('@rollup/plugin-node-resolve').default;
 const commonjs  = require('@rollup/plugin-commonjs');
 const { terser }  = require('rollup-plugin-terser');
 const babel  = require('@rollup/plugin-babel').default;
+const nodePolyfills = require('rollup-plugin-polyfill-node');
+
 async function js_task() {
 	production = false;
 	const bundle = await rollup.rollup({
 		input: 'src/index.js',
 		plugins: [
+            nodePolyfills( /* options */ ),
 			resolve(), // tells Rollup how to find date-fns in node_modules
 			commonjs(), // converts date-fns to ES modules
 			babel({ babelHelpers: 'bundled' }),
@@ -42,6 +45,7 @@ function pug_task() {
     return src('./src/**/*.pug')
     .pipe(
       pug({
+				basedir: __dirname
         // Your options in here.
       })
     )

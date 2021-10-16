@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&display=swap");
+
+#tyn_root {
+  //font-family: 'Comfortaa';
+
+  .full_page_container {
+    height: calc(100vh - 40px);
+    display: flex;
+  }
+
+  #tyn_header_root {
+    margin: auto;
+    padding: 1em;
+    border-radius: 4px;
+    background-color: #e28828;
+    color: #e4dbe5;
+    box-shadow: 0px 0px 4px #00000050;
+
+		h1 {
+			letter-spacing: 0.35em;
+		}
+    h1, h2 {
+			text-align: center;
+      text-transform: uppercase;
+      color: #e4dbe5;
+      text-shadow: 3px 3px 0px #0003;
+    }
+  }
+
+  #tyn_gallery_clips {
+    overflow: clip;
+
+    .clips_row {
+      width: max-content;
+      display: flex;
+      gap: 3px;
+			position: relative;
+
+			&.move_left {
+				left: 0px;
+			}
+			&.move_right {
+				right: 0px;
+				flex-direction: row-reverse;
+			}
+
+      & > .clip_root {
+        height: 10em;
+        cursor: pointer;
+
+        video {
+          max-height: calc(100% - 8px);
+          width: auto;
+          margin: 4px;
+          transition-duration: 100ms;
+
+          &:hover {
+            //margin: 0px;
+            //max-height: 100%;
+          }
+        }
+      }
+    }
+  }
+}

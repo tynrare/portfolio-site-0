@@ -1,7 +1,19 @@
 extends views/layout
 
 block headcontent
- link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/water.css@2/out/water.css')
+	link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/water.css@2/out/water.css')
 
 block content
-  div(id="snbx0-root")
+	#tyn_root
+		.full_page_container
+			#tyn_header_root
+				include:remarkable /res/text/main.md
+		#tyn_gallery_root
+			h1 Gallery
+			h2 Clips
+			#tyn_gallery_clips
+				.clips_row.move_left
+				.clips_row.move_left
+				.clips_row.move_left
+			h2 Screenshots
+			h2 Artworks
