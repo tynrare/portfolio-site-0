@@ -24,7 +24,7 @@ export default class App {
 
       this.clipsSlides.init(
         elements,
-        document.querySelectorAll("#tyn_gallery_clips .clips_row")
+        document.querySelectorAll("#tyn_gallery_clips .content_row")
       );
     }
 
@@ -32,12 +32,25 @@ export default class App {
       this.screenshotSlides = new RollingSlidesEffectManager();
       const elements = [];
       for (let i = 1; i <= 11; i++) {
-        elements.push(makePicElement(i));
+        elements.push(makePicElement('screenshots', i));
       }
 
       this.screenshotSlides.init(
         elements,
-        document.querySelectorAll("#tyn_gallery_screenshots .screenshots_row")
+        document.querySelectorAll("#tyn_gallery_screenshots .content_row")
+      );
+    }
+
+    {
+      this.artworkSlides = new RollingSlidesEffectManager();
+      const elements = [];
+      for (let i = 1; i <= 16; i++) {
+        elements.push(makePicElement('artworks', i));
+      }
+
+      this.artworkSlides.init(
+        elements,
+        document.querySelectorAll("#tyn_gallery_artworks .content_row")
       );
     }
   }
@@ -56,7 +69,7 @@ export default class App {
 function makeClipElement(index) {
   const name = ("000" + index).slice(-4);
   const el = document.createElement("div");
-  el.classList.add("clip_root");
+  el.classList.add("content_root");
   el.innerHTML = `
 				<video preload="metadata" muted>
 					<source src='res/clips/${name}.m4v'>
@@ -70,16 +83,22 @@ function makeClipElement(index) {
   el.addEventListener("mouseout", () => {
     video.pause();
   });
+  el.addEventListener("touchstart", () => {
+    video.play();
+  });
+  el.addEventListener("touchend", () => {
+    video.pause();
+  });
 
   return el;
 }
 
-function makePicElement(index) {
+function makePicElement(path, index) {
   const name = ("000" + index).slice(-4);
   const el = document.createElement("div");
-  el.classList.add("pic_root");
+  el.classList.add("content_root");
   el.innerHTML = `
-					<img src='res/clips/${name}.m4v'></img>
+					<img src='res/${path}/${name}.jpg'></img>
 				`;
 
   return el;

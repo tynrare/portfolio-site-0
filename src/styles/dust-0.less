@@ -8,8 +8,16 @@
     display: flex;
   }
 
+	.footer {
+		width: 100%;
+		display: block;
+		font-size: 3em;
+		text-align: center;
+	}
+
   h1 {
     letter-spacing: 0.35em;
+		margin-top: 2em;
   }
   h1,
   h2 {
@@ -26,6 +34,7 @@
 
     h1 {
       letter-spacing: 0.35em;
+			margin-top: 0.5em;
     }
     h1,
     h2 {
@@ -36,10 +45,10 @@
     }
   }
 
-  #tyn_gallery_clips {
+  .tyn_gallery_section {
     overflow: clip;
 
-    .clips_row {
+    .content_row {
       width: max-content;
       display: flex;
       gap: 3px;
@@ -53,11 +62,11 @@
         flex-direction: row-reverse;
       }
 
-      & > .clip_root {
+      & > .content_root {
         height: 10em;
         cursor: pointer;
 
-        video {
+        video, img {
           max-height: calc(100% - 8px);
           width: auto;
           margin: 4px;

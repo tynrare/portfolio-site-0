@@ -50,7 +50,7 @@ export default class RollingSlidesEffectManager {
           }
           if (
             Math.abs(container._rollinEffectPos) >
-            container.firstChild.clientWidth
+            container.firstChild?.clientWidth
           ) {
             container._rollinEffectPos -= container.firstChild.clientWidth;
             this.unusedSlides.push(container.firstChild);
@@ -67,6 +67,12 @@ export default class RollingSlidesEffectManager {
   registerSlide(el) {
     el.addEventListener("mouseover", () => {
       this.pause();
+    });
+    el.addEventListener("touchstart", () => {
+      this.pause();
+    });
+    el.addEventListener("touchend", () => {
+      this.play();
     });
     el.addEventListener("mouseout", () => {
       this.play();
