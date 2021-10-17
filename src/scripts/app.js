@@ -66,13 +66,14 @@ export default class App {
   run() {}
 }
 
+const cloudPath = 'https://storage.googleapis.com/tynrare-dust-0/portfolio-clips/'
 function makeClipElement(index) {
   const name = ("000" + index).slice(-4);
   const el = document.createElement("div");
   el.classList.add("content_root");
   el.innerHTML = `
 				<video preload="metadata" muted>
-					<source src='res/clips/${name}.webm'>
+					<source src='${cloudPath}${name}.m4v'>
 				</video>
 				`;
 
