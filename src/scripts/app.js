@@ -72,7 +72,7 @@ function makeClipElement(index) {
   el.classList.add("content_root");
   el.innerHTML = `
 				<video preload="metadata" muted>
-					<source src='res/clips/${name}.m4v'>
+					<source src='res/clips/${name}.webm'>
 				</video>
 				`;
 
