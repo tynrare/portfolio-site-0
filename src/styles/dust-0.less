@@ -8,6 +8,14 @@
     display: flex;
   }
 
+  h1 {
+    letter-spacing: 0.35em;
+  }
+  h1,
+  h2 {
+    text-transform: uppercase;
+  }
+
   #tyn_header_root {
     margin: auto;
     padding: 1em;
@@ -16,11 +24,12 @@
     color: #e4dbe5;
     box-shadow: 0px 0px 4px #00000050;
 
-		h1 {
-			letter-spacing: 0.35em;
-		}
-    h1, h2 {
-			text-align: center;
+    h1 {
+      letter-spacing: 0.35em;
+    }
+    h1,
+    h2 {
+      text-align: center;
       text-transform: uppercase;
       color: #e4dbe5;
       text-shadow: 3px 3px 0px #0003;
@@ -34,15 +43,15 @@
       width: max-content;
       display: flex;
       gap: 3px;
-			position: relative;
+      position: relative;
 
-			&.move_left {
-				left: 0px;
-			}
-			&.move_right {
-				right: 0px;
-				flex-direction: row-reverse;
-			}
+      &.move_left {
+        left: 0px;
+      }
+      &.move_right {
+        right: 0px;
+        flex-direction: row-reverse;
+      }
 
       & > .clip_root {
         height: 10em;

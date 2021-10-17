@@ -18,55 +18,26 @@ export default class App {
     {
       this.clipsSlides = new RollingSlidesEffectManager();
       const elements = [];
-      const clips = [
-        "slots-clip-0",
-        "slots-clip-1",
-        "slots-clip-2",
-        "slots-clip-3",
-        "slots-clip-4",
-        "slots-clip-5",
-        "bacto-clip-0",
-        "bacto-clip-1",
-        "bacto-clip-2",
-        "bacto-clip-3",
-        "demo-clip-0",
-        "demo-clip-1",
-        "demo-clip-2",
-        "demo-clip-3",
-        "demo-clip-4",
-        "demo-clip-5",
-        "demo-clip-6",
-        "demo-clip-7",
-        "demo-clip-8",
-        "demo-clip-9",
-        "demo-clip-10",
-        "demo-clip-11",
-        "demo-clip-12",
-      ];
-      clips.forEach((name) => {
-        const el = document.createElement("div");
-        el.classList.add("clip_root");
-        el.innerHTML = `
-				<video preload="metadata" muted>
-					<source src='res/clips/${name}.m4v'>
-				</video>
-				`;
-        elements.push(el);
-
-        const video = el.querySelector("video");
-        el.addEventListener("mouseover", () => {
-					this.clipsSlides.pause();
-          video.play();
-        });
-        el.addEventListener("mouseout", () => {
-					this.clipsSlides.play();
-          video.pause();
-        });
-      });
+      for (let i = 1; i <= 48; i++) {
+        elements.push(makeClipElement(i));
+      }
 
       this.clipsSlides.init(
         elements,
         document.querySelectorAll("#tyn_gallery_clips .clips_row")
+      );
+    }
+
+    {
+      this.screenshotSlides = new RollingSlidesEffectManager();
+      const elements = [];
+      for (let i = 1; i <= 11; i++) {
+        elements.push(makePicElement(i));
+      }
+
+      this.screenshotSlides.init(
+        elements,
+        document.querySelectorAll("#tyn_gallery_screenshots .screenshots_row")
       );
     }
   }
@@ -80,4 +51,36 @@ export default class App {
   }
 
   run() {}
+}
+
+function makeClipElement(index) {
+  const name = ("000" + index).slice(-4);
+  const el = document.createElement("div");
+  el.classList.add("clip_root");
+  el.innerHTML = `
+				<video preload="metadata" muted>
+					<source src='res/clips/${name}.m4v'>
+				</video>
+				`;
+
+  const video = el.querySelector("video");
+  el.addEventListener("mouseover", () => {
+    video.play();
+  });
+  el.addEventListener("mouseout", () => {
+    video.pause();
+  });
+
+  return el;
+}
+
+function makePicElement(index) {
+  const name = ("000" + index).slice(-4);
+  const el = document.createElement("div");
+  el.classList.add("pic_root");
+  el.innerHTML = `
+					<img src='res/clips/${name}.m4v'></img>
+				`;
+
+  return el;
 }

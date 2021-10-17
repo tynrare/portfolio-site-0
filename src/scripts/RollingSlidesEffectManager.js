@@ -5,6 +5,7 @@ export default class RollingSlidesEffectManager {
     this.containers = [];
 
     this.animSpeed = 2;
+		this.active = false;
   }
 
   pause() {
@@ -64,6 +65,13 @@ export default class RollingSlidesEffectManager {
   }
 
   registerSlide(el) {
+    el.addEventListener("mouseover", () => {
+      this.pause();
+    });
+    el.addEventListener("mouseout", () => {
+      this.play();
+    });
+
     this.slides.push(el);
     for (const i in this.containers) {
       const container = this.containers[i];
@@ -86,8 +94,7 @@ function isInViewport(element) {
   return (
     rect.top >= 0 &&
     //rect.left >= 0 &&
-    rect.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight) 
-		// && rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    // && rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 }
