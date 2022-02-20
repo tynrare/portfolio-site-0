@@ -1,8 +1,7 @@
 {
   "name": "me.tynrare.net",
-  "version": "1.0.0",
+  "version": "0.0.3",
   "description": "",
-  "main": "index.html",
   "source": "src/index.pug",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
