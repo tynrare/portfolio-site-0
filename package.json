@@ -1,8 +1,8 @@
 {
-  "name": "js-dust-0",
+  "name": "me.tynrare.net",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "source": "src/index.pug",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
@@ -23,6 +23,5 @@
     "parcel-reporter-static-files-copy": "^1.3.4"
   },
   "dependencies": {
-    "glea": "^1.3.1"
   }
 }
