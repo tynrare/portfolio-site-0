@@ -1,0 +1,90 @@
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+@font-face {
+  font-family: 'Azeret Mono';
+  src: url('http:./res/AzeretMono-VariableFont_wght.ttf');
+}
+
+:root {
+  --dust-color-0: #FFFFEB;
+  --dust-color-1: #323D4F;
+}
+
+#tyndustre-0 {
+  font-family: 'Azeret Mono';
+  
+  background-color: var( --dust-color-0);
+  color: var(--dust-color-1);
+  font-size: 3.7vw;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  .margin-auto {
+    margin: auto;
+  }
+}
+
+#pic-avessy {
+  width: 1em;
+  height: 1em;
+  transform: rotate(45deg);
+  display: block;
+  box-shadow: 0px 0px 0px 0.2em var(--dust-color-1);
+  border-radius: 0.1em;
+  margin: auto;
+}
+
+#credits {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  bottom: 10%;
+  left: 50%;
+}
+
+kbd {
+  font-size: 26px;
+  border: 2px solid var(--dust-color-1);
+  width: max-content;
+  border-radius: 3px;
+  padding: 0.3em;
+  opacity: 0.5;
+}
+
+#tyndustre-1 {
+  background-color: var( --dust-color-0);
+  color: var(--dust-color-1);
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  .margin-auto {
+    margin: auto;
+  }
+
+  #window-in-center {
+    font-family: 'Azeret Mono', monospace;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+
+    width: 70%;
+    height: 70%;
+
+    padding: 2em;
+
+    border-radius: 7px;
+    border-bottom: 4px solid rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+
+    background-color: #3c343a;
+    color: #f0bc21;
+  }
+}
