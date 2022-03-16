@@ -16,41 +16,15 @@ export default class App {
 
   initSlides() {
     {
-      this.clipsSlides = new RollingSlidesEffectManager();
-      const elements = [];
-      for (let i = 1; i <= 48; i++) {
-        elements.push(makeClipElement(i));
-      }
-
-      this.clipsSlides.init(
-        elements,
-        document.querySelectorAll("#tyn_gallery_clips .content_row")
-      );
-    }
-
-    {
       this.screenshotSlides = new RollingSlidesEffectManager();
       const elements = [];
-      for (let i = 1; i <= 11; i++) {
+      for (let i = 1; i <= 8; i++) {
         elements.push(makePicElement('screenshots', i));
       }
 
       this.screenshotSlides.init(
         elements,
         document.querySelectorAll("#tyn_gallery_screenshots .content_row")
-      );
-    }
-
-    {
-      this.artworkSlides = new RollingSlidesEffectManager();
-      const elements = [];
-      for (let i = 1; i <= 16; i++) {
-        elements.push(makePicElement('artworks', i));
-      }
-
-      this.artworkSlides.init(
-        elements,
-        document.querySelectorAll("#tyn_gallery_artworks .content_row")
       );
     }
   }
@@ -66,6 +40,18 @@ export default class App {
   run() {}
 }
 
+function makePicElement(path, index) {
+  const name = ("000" + index).slice(-4);
+  const el = document.createElement("div");
+  el.classList.add("content_root");
+  el.innerHTML = `
+					<img src='res/${path}/${name}.png'></img>
+				`;
+
+  return el;
+}
+
+/*
 const cloudPath = 'https://storage.googleapis.com/tynrare-dust-0/portfolio-clips/'
 function makeClipElement(index) {
   const name = ("000" + index).slice(-4);
@@ -93,14 +79,5 @@ function makeClipElement(index) {
 
   return el;
 }
+*/
 
-function makePicElement(path, index) {
-  const name = ("000" + index).slice(-4);
-  const el = document.createElement("div");
-  el.classList.add("content_root");
-  el.innerHTML = `
-					<img src='res/${path}/${name}.jpg'></img>
-				`;
-
-  return el;
-}
