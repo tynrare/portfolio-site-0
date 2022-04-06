@@ -1,12 +1,11 @@
 {
   "name": "me.tynrare.net",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
-  "source": "src/index.pug",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build"
+    "start": "parcel src/index.pug",
+    "build": "parcel build src/index.pug"
   },
   "staticFiles": {
     "staticPath": "res",

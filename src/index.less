@@ -19,7 +19,6 @@ body {
 
   background-color: var(--dust-color-0);
   color: var(--dust-color-1);
-  font-size: 7.7vw;
 
   width: 100%;
   height: 100%;
@@ -31,40 +30,38 @@ body {
   }
 }
 
-#pic-avessy {
-  width: 1em;
-  height: 1em;
-  transform: rotate(45deg);
-  display: block;
-  box-shadow: 0px 0px 0px 0.2em var(--dust-color-1);
-  border-radius: 0.1em;
-  margin: auto;
-
-  transition-timing-function: ease;
-  transition-duration: 0.7s;
+canvas#main {
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
-#pic-avessy:hover {
-  transform: rotate(187deg);
+#title {
+  z-index: 1;
+  padding: 0.3em;
+  text-align: right;
+  font-size: 7.7vw;
+  text-shadow: 0px 2px 0px var(--dust-color-0);
 }
 
 #credits {
+  z-index: 1;
+  font-size: 22px;
   position: absolute;
-  transform: translate(-50%, -50%);
-  bottom: 10%;
-  left: 50%;
+  bottom: 0;
+  right: 0;
+  margin: 1em;
 
   text-transform: uppercase full-width;
   font-weight: bold;
   
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: end;
   gap: 1vh;
 }
 
 kbd {
-  font-size: 22px;
   border: 2px solid var(--dust-color-1);
   width: max-content;
   border-radius: 3px;
@@ -74,37 +71,5 @@ kbd {
 
   & > * {
     margin: auto;
-  }
-}
-
-#tyndustre-1 {
-  background-color: var(--dust-color-0);
-  color: var(--dust-color-1);
-
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-
-  .margin-auto {
-    margin: auto;
-  }
-
-  #window-in-center {
-    font-family: "Azeret Mono", monospace;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-
-    width: 70%;
-    height: 70%;
-
-    padding: 2em;
-
-    border-radius: 7px;
-    border-bottom: 4px solid rgba(0, 0, 0, 0.25);
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
-
-    background-color: #3c343a;
-    color: #f0bc21;
   }
 }
