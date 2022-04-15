@@ -82,7 +82,7 @@ void mainImage(
             float amb = 0.5 + 0.5*dot(nor,vec3(0.0,1.0,0.0));
             col = vec3(0.2,0.3,0.4)*amb + vec3(0.8,0.7,0.5)*dif;
 			*/
-			col = vec3(  0.196, 0.239, 0.31 );
+			col = vec3(  0.851, 0.141, 0.235 );
         }
 
         // gamma        

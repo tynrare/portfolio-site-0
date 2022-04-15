@@ -10,8 +10,9 @@ body {
 }
 
 :root {
-  --dust-color-0: #ffffeb;
+  --dust-color-0: #ffffe4;
   --dust-color-1: #323d4f;
+  --dust-color-2: #d9243c;
 }
 
 #tyndustre-0 {
@@ -39,15 +40,14 @@ canvas#main {
 #title {
   z-index: 1;
   padding: 0.3em;
-  text-align: right;
-  font-size: 7.7vw;
-  text-shadow: 0px 2px 0px var(--dust-color-0);
-  width: 100%;
+  font-size: 100px;
+  position: absolute;
+  bottom: 0;
 }
 
 #credits {
   z-index: 1;
-  font-size: 22px;
+  font-size: 15px;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -63,7 +63,6 @@ canvas#main {
 }
 
 kbd {
-  border: 2px solid var(--dust-color-1);
   width: max-content;
   border-radius: 3px;
   padding: 0.3em;
