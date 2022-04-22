@@ -1,4 +1,4 @@
-#define AA 3
+#define AA 2
 
 float sdRoundBox( vec3 p, vec3 b, float r )
 {
@@ -15,12 +15,12 @@ void mainImage(
     out vec4 fragColor, 
     in vec2 fragCoord, 
     in vec2 resolution, 
-    in vec2 pointer )
+    in float time )
 {
      // camera movement	
-	//float an = 0.5*(time-10.0);
+	float an = 0.5*(time-10.0);
     //float an = sin(1.0);
-    float an = (pointer.x - 0.5) * 2.0;
+    //float an = (pointer.x - 0.5) * 2.0;
 	vec3 ro = vec3( 1.0*cos(an), 0.0, 1.0*sin(an) );
     vec3 ta = vec3( 0.0, 0.0, 0.0 );
     // camera matrix
@@ -56,12 +56,16 @@ void mainImage(
 
             {
                 vec3 q = pos - vec3( 0.0, 0.0, 0.0 );
-                d = min( d, sdRoundBox(q, vec3(0.1, 0.1, 0.1), 0.1 ) );
+                d = min( d, sdRoundBox(q, vec3(0.1, 0.1, 0.1), 0.3 ) );
             }
 
             {
-                vec3 q = pos - vec3( 0.0, (pointer.y - 0.5) * 1.3, 0.0 );
-                d = max( d, sdSphere(q,  0.2 ) );
+                vec3 q = pos - vec3( 0.0, cos(time) * 0.5, 0.0 );
+                //vec3 q2 = pos - vec3( 0, cos(-time * 0.5) * 0.5, 0.0 );
+                d = max( d, sdSphere(q,  0.3 )  );
+            }
+
+            {
             }
 
             float h = d;

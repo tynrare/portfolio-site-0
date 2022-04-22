@@ -1,79 +1,30 @@
+@import './dust-0.less';
+@import './fancy.less';
+
 html,
 body {
-  width: 100vw;
-  height: 100vh;
-}
-
-@font-face {
-  font-family: "Azeret Mono";
-  src: url("./styles/AzeretMono-VariableFont_wght.ttf");
-}
-
-:root {
-  --dust-color-0: #ffffe4;
-  --dust-color-1: #323d4f;
-  --dust-color-2: #d9243c;
-}
-
-html, body, #tyndustre-0, #title {
+  width: 100%;
+  height: 100%;
+  display: flex;
   overflow: clip;
 }
 
-#tyndustre-0 {
-  font-family: "Azeret Mono";
+:root {
+  --color-0: #ffffe4;
+  --color-1: #323d4f;
+  --color-2: #d9243c;
+}
 
-  background-color: var(--dust-color-0);
-  color: var(--dust-color-1);
-
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-
-  .margin-auto {
-    margin: auto;
-  }
+#frontdoor {
+  margin: auto;
+  width: 512px;
+  height: 512px;
+  position: relative;
 }
 
 canvas#main {
   width: 100%;
   height: 100%;
   position: absolute;
-}
-
-#title {
-  z-index: 1;
-  padding: 0.3em;
-  font-size: 100px;
-  position: absolute;
-  bottom: 0;
-}
-
-#credits {
-  z-index: 1;
-  font-size: 15px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin: 1em;
-
-  text-transform: uppercase full-width;
-  font-weight: bold;
-  
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  gap: 1vh;
-}
-
-kbd {
-  width: max-content;
-  border-radius: 3px;
-  padding: 0.3em;
-  opacity: 0.5;
-  display: flex;
-
-  & > * {
-    margin: auto;
-  }
+  z-index: -1;
 }
