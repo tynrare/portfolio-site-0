@@ -1,0 +1,41 @@
+body.fancy {
+  background-color: var(--color-1);
+
+  @font-face {
+    font-family: "Azeret Mono";
+    src: url("./styles/AzeretMono-VariableFont_wght.ttf");
+  }
+
+  font-family: "Azeret Mono";
+}
+
+.fancy #frontfoor,
+.fancy canvas#main {
+  border-radius: 10px;
+}
+
+.fancy #frontfoor {
+  display: flex;
+}
+
+.fancy #credits {
+  color: var(--color-1);
+  margin: 10px;
+  position: relative;
+
+  kbd p {
+    transition-duration: 303ms;
+    &:hover {
+      //font-size: 1.1em;
+      letter-spacing: 2em;
+      text-transform: uppercase;
+	  font-weight: bold;
+    }
+  }
+}
+
+.fancy #title {
+  color: var(--color-0);
+  margin-left: 8px;
+  text-transform: uppercase;
+}
