@@ -1,57 +1,74 @@
-#tyndustre-1,
-#title {
-  overflow: clip;
-}
+// # Dust 220529
 
-#tyndustre-1 {
-  font-family: "Azeret Mono";
+.dust-220539 {
+  background-color: var(--color-0);
+  color: var(--color-1);
 
-  background-color: var(--dust-color-0);
-  color: var(--dust-color-1);
-
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-
-  .margin-auto {
-    margin: auto;
-  }
-
-  #title {
-    z-index: 1;
-    padding: 0.3em;
-    font-size: 100px;
-    position: absolute;
-    bottom: 0;
-  }
-
-  #credits {
-    z-index: 1;
-    font-size: 15px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 1em;
-
-    text-transform: uppercase full-width;
-    font-weight: bold;
-
+  #frontdoor {
     display: flex;
     flex-direction: column;
-    align-items: end;
-    gap: 1vh;
-  }
 
-  kbd {
-    width: max-content;
-    border-radius: 3px;
-    padding: 0.3em;
-    opacity: 0.5;
-    display: flex;
-
-    & > * {
-      margin: auto;
+    stamp {
+      color: var(--color-1);
+      box-shadow: 0px 2px 0px 0px var(--color-1);
+      padding: 0.2em 0.5em;
+      margin: auto 0 0 auto;
     }
+
+    header {
+      font-size: 2em;
+      margin-left: -1em;
+      margin-bottom: 1em;
+      display: flex;
+    }
+
+    
+    a.right {
+      margin: auto 0 0 auto;
+    }
+
+    a.button {
+      font-size: 0.5em;
+      color: var(--color-2);
+      background-color: var(--color-0);
+      width: fit-content;
+      padding: 0.2em 0.5em;
+      cursor: pointer;
+      transition-duration: 100ms;
+      box-shadow: 0px 2px 0px 0px var(--color-2);
+
+      &.exit {
+        margin: auto 0 0 auto;
+      }
+
+      &:hover {
+        transform: scale(1.5, 1);
+        color: var(--color-2);
+      }
+
+      &:active {
+        transform: scale(1.1);
+        color: var(--color-0);
+      }
+
+      &:before {
+        content: '█. ';
+      }
+    }
+
+
+    @font-face {
+      font-family: "Azeret";
+      src: url("./styles/AzeretMono-VariableFont_wght.ttf");
+    }
+
+    font-family: "Azeret";
+
+    @font-face {
+      font-family: "Flow";
+      src: url("./styles/FlowRounded-Regular.ttf");
+    }
+
+    font-family: "Flow", "Azeret";
   }
 }

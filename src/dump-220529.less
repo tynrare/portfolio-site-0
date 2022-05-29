@@ -1,0 +1,102 @@
+body.dump-220529 {
+  background-color: var(--color-1);
+
+  @font-face {
+    font-family: "Azeret Mono";
+    src: url("./styles/AzeretMono-VariableFont_wght.ttf");
+  }
+
+  font-family: "Azeret Mono";
+}
+
+.dump-220529 #frontfoor,
+.dump-220529 canvas#main {
+  border-radius: 10px;
+}
+
+.dump-220529 #frontfoor {
+  display: flex;
+}
+
+.dump-220529 #credits {
+  color: var(--color-1);
+  margin: 10px;
+  position: relative;
+
+  kbd p {
+    transition-duration: 303ms;
+    &:hover {
+      //font-size: 1.1em;
+      letter-spacing: 2em;
+      text-transform: uppercase;
+	  font-weight: bold;
+    }
+  }
+}
+
+.dump-220529 #title {
+  color: var(--color-0);
+  margin-left: 8px;
+  text-transform: uppercase;
+}
+
+
+// # Stash 220529
+
+#tyndustre-1,
+#title {
+  overflow: clip;
+}
+
+#tyndustre-1 {
+  font-family: "Azeret Mono";
+
+  background-color: var(--dust-color-0);
+  color: var(--dust-color-1);
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  .margin-auto {
+    margin: auto;
+  }
+
+  #title {
+    z-index: 1;
+    padding: 0.3em;
+    font-size: 100px;
+    position: absolute;
+    bottom: 0;
+  }
+
+  #credits {
+    z-index: 1;
+    font-size: 15px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1em;
+
+    text-transform: uppercase full-width;
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 1vh;
+  }
+
+  kbd {
+    width: max-content;
+    border-radius: 3px;
+    padding: 0.3em;
+    opacity: 0.5;
+    display: flex;
+
+    & > * {
+      margin: auto;
+    }
+  }
+}
