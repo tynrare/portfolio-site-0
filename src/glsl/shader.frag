@@ -7,5 +7,5 @@ uniform vec3 pointer;
 
 void main() {
   vec2 p = pointer.xy / resolution;
-  raymarch(gl_FragColor, gl_FragCoord.xy, resolution, time * 1.0);
+  raymarch(gl_FragColor, gl_FragCoord.xy, resolution, time * 0.1);
 }

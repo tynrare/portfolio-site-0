@@ -48,7 +48,6 @@ float shape_f(float time, vec3 pos, float d) {
     //return mod(sdSphere(q, 0.1), d);
 }
 
-
 float map(float time, vec3 pos, float d) {
     d = shape_a(time, pos, d);
     d = shape_b(time, pos, d);
@@ -84,53 +83,43 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord, in vec2 resolution, in flo
 
     vec3 tot = vec3(0.0);
 
-    #if AA>1
-    for(int m = 0; m < AA; m++) for(int n = 0; n < AA; n++) {
-        // pixel coordinates
-            vec2 o = vec2(float(m), float(n)) / float(AA) - 0.5;
-            vec2 p = (-resolution.xy + 2.0 * (fragCoord + o)) / resolution.y;
-        #else    
-            vec2 p = (-resolution.xy + 2.0 * fragCoord) / resolution.y;
-        #endif
+    vec2 p = (-resolution.xy + 2.0 * fragCoord) / resolution.y;
 
 	    // create view ray
-            vec3 rd = normalize(p.x * uu + p.y * vv + 1.5 * ww);
+    vec3 rd = normalize(p.x * uu + p.y * vv + 1.5 * ww);
 
         // raymarch
-            const float tmax = 3.0;
-            float t = 0.0;
-            float d = 1e10;
+    const float tmax = 3.0;
+    float t = 0.0;
+    float d = 1e10;
 
-            for(int i = 0; i < 256; i++) {
-                vec3 pos = ro + t * rd;
+    for(int i = 0; i < 256; i++) {
+        vec3 pos = ro + t * rd;
 
-                d = map(time, pos, d);
-                float h = d;
+        d = map(time, pos, d);
+        float h = d;
 
-                if(h < 0.0001 || t > tmax)
-                    break;
-                t += h;
-            }
+        if(h < 0.0001 || t > tmax)
+            break;
+        t += h;
+    }
 
        // shading/lighting	
-            vec3 col_a = vec3(0, 0, 0);
-            vec3 col_b = vec3(0.0, 1.0, 0.3);
-            if(t < tmax) {
-                vec3 pos = ro + t * rd;
-                vec3 nor = calcNormal(time, pos, d);
+    vec3 col_a = vec3(0, 0, 0);
+    vec3 col_b = vec3(0.0, 1.0, 0.3);
+    if(t < tmax) {
+        vec3 pos = ro + t * rd;
+        vec3 nor = calcNormal(time, pos, d);
                 //vec3 nor = pos;
-                float dif = clamp(dot(nor, vec3(1.0, 1.0, 1.0)), 0.0, 0.0);
-                float amb = 1.0 + 0.5 * dot(nor, vec3(1.0, 0.0, 1.0));
-                col_a = col_b / amb * 1.5 + col_b * dif * 0.1;
-            }
+        float dif = clamp(dot(nor, vec3(1.0, 1.0, 1.0)), 0.0, 0.0);
+        float amb = 1.0 + 0.5 * dot(nor, vec3(1.0, 0.0, 1.0));
+        col_a = mix(col_a, col_b, 1.0 - smoothstep(-0.1, 0.1, d));
+        col_a = col_b / amb * 1.5 + col_b * dif * 0.1;
+    }
 
         // gamma        
-            col_a = sqrt( col_a );
-            tot += col_a;
-    #if AA>1
-        }
-    tot /= float(AA * AA);
-    #endif
+    col_a = sqrt(col_a);
+    tot += col_a;
 
     fragColor = vec4(tot, 1.0);
 }
