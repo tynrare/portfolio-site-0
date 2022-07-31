@@ -1,0 +1,182 @@
+#frontdoor {
+  color: var(--color-0);
+}
+
+.d29 #frontdoor {
+  background-color: var(--color-1);
+}
+
+.c2207 .text {
+  p {
+    display: block;
+
+    &[id]::after {
+      content: " " attr(id);
+      font-family: "Flow";
+    }
+  }
+
+  a {
+  }
+}
+
+.c2207 door {
+  width: max-content;
+  border-radius: 3px;
+  padding: 0.3em;
+  opacity: 0.5;
+  display: flex;
+
+  & > * {
+    margin: auto;
+  }
+}
+
+.c2207 {
+  db,
+  bb {
+    margin: 1em;
+
+    p.kbd {
+      transition-duration: 303ms;
+      &:hover {
+        //font-size: 1.1em;
+        letter-spacing: 2em;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+body.c2207 {
+  @font-face {
+    font-family: "Azeret";
+    src: url("./assets/AzeretMono.ttf");
+  }
+
+  @font-face {
+    font-family: "Flow";
+    src: url("./assets/FlowRounded.ttf");
+  }
+
+  font-family: "Azeret";
+}
+
+.c2207 db {
+  font-family: "Flow", "Azeret";
+}
+
+.c2207 #frontfoor,
+.c2207 canvas#main {
+  border-radius: 10px;
+}
+
+.c2207 #frontfoor {
+  display: flex;
+}
+
+.c2207 bb {
+  margin: 10px;
+  position: relative;
+}
+
+.c2207 #title {
+  margin-left: 8px;
+  text-transform: uppercase;
+}
+
+.c2207 bb.stamp {
+  border-bottom: solid 2px var(--color-1);
+  padding: 1em 0.5em;
+  margin: auto 0 -0.5em auto;
+}
+
+// #d2207
+
+.c2207 {
+  #frontdoor {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+
+    .header {
+      font-size: 2em;
+      margin-left: -1em;
+      margin-bottom: 1em;
+      display: flex;
+    }
+
+    a.button {
+      color: var(--color-2);
+      width: fit-content;
+      cursor: pointer;
+      transition-duration: 100ms;
+      box-shadow: 0px 5px var(--color-2);
+
+      &.exit {
+        margin: auto 0 -1em auto;
+      }
+
+      &:hover {
+        letter-spacing: 6.9em;
+        border-bottom: dashed 0px var(--color-0);
+        box-shadow: 0px 5px var(--color-0);
+        color: var(--color-0);
+      }
+
+      &:active {
+        letter-spacing: 1em;
+        color: var(--color-0);
+      }
+    }
+  }
+}
+
+// # Stash 220529
+
+#tyndustre-1,
+#title {
+  overflow: clip;
+}
+
+#tyndustre-1 {
+  font-family: "Azeret Mono";
+
+  background-color: var(--dust-color-0);
+  color: var(--dust-color-1);
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  .margin-auto {
+    margin: auto;
+  }
+
+  #title {
+    z-index: 1;
+    padding: 0.3em;
+    font-size: 100px;
+    position: absolute;
+    bottom: 0;
+  }
+
+  #credits {
+    z-index: 1;
+    font-size: 15px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1em;
+
+    text-transform: uppercase full-width;
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 1vh;
+  }
+}
